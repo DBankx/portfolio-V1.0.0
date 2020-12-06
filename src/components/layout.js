@@ -1,9 +1,9 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-
-import Header from "./header"
-import "./layout.css"
+import SideBar from "./sidebar";
+import Menu from "./menu";
+import "../assets/styles/style.css";
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -11,31 +11,35 @@ const Layout = ({ children }) => {
       site {
         siteMetadata {
           title
+          location
+          phone
+          emailAddress
+          position
+          birthDay
+          author
         }
       }
     }
   `)
 
+    const {location, birthDay, emailAddress, position, phone, author} = data.site.siteMetadata
+    
   return (
-    <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
-        <main>{children}</main>
-        <footer style={{
-          marginTop: `2rem`
-        }}>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
-        </footer>
-      </div>
-    </>
+      <main className="main">
+        <div className="container gutter-top">
+          <div className="row sticky-parent">
+              <SideBar author={author} email={emailAddress} position={position} phone={phone} birthDay={birthDay} location={location} />
+
+              <div className="col-12 col-md-12 col-xl-9">
+                  <div className="box shadow pb-0">
+                     <Menu />
+                      {children}
+                  </div>
+              </div>
+              
+          </div>
+        </div>
+      </main>
   )
 }
 

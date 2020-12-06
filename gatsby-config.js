@@ -7,7 +7,8 @@ module.exports = {
     birthDay: "March 29, 1999",
     location: "Lagos, Nigeria",
     emailAddress: "damihundeyin@gmail.com",
-    phone: "+234 (0) 817-270-2507"
+    phone: "+234 (0) 817-270-2507",
+    position: "Full-stack engineer"
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
