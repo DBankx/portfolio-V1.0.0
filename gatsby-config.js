@@ -1,8 +1,13 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Hunndy`,
+    description: `A full-stack engineer capable of delivering market ready enterprise applications.`,
+    author: `Hundeyin Oluwadamilola`,
+    twitterUsername: "@DBankx1",
+    birthDay: "March 29, 1999",
+    location: "Lagos, Nigeria",
+    emailAddress: "damihundeyin@gmail.com",
+    phone: "+234 (0) 817-270-2507"
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -18,8 +23,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Hundeyin Oluwadamilola`,
+        short_name: `Hundy`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
