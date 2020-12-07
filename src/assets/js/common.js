@@ -1,8 +1,3 @@
-/*
- * Author: ArtStyles (ArtTemplate)
- * Template Name: vCard
- * Version: 1.0.3
-*/
 
 $(document).ready(function() {
 

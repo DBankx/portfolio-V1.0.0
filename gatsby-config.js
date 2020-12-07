@@ -8,7 +8,8 @@ module.exports = {
     location: "Lagos, Nigeria",
     emailAddress: "damihundeyin@gmail.com",
     phone: "+234 (0) 817-270-2507",
-    position: "Full-stack engineer"
+    position: "Full-stack engineer",
+    url: "https://hunndy.com"
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

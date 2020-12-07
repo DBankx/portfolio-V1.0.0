@@ -29,7 +29,6 @@ const Layout = ({ children }) => {
         <div className="container gutter-top">
           <div className="row sticky-parent">
               <SideBar author={author} email={emailAddress} position={position} phone={phone} birthDay={birthDay} location={location} />
-
               <div className="col-12 col-md-12 col-xl-9">
                   <div className="box shadow pb-0">
                      <Menu />
