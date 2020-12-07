@@ -1,7 +1,8 @@
 import anime from 'animejs/lib/anime.es'
 import "sticky-kit/dist/sticky-kit";
+import Swiper from 'swiper';
+import 'swiper/swiper-bundle.css';
 const $ = require( "jquery" );
-const Swiper = require("swiper");
 const autosize = require("autosize");
 const validator = require("validator");
 const objectFitImages = require("object-fit-images");
@@ -161,7 +162,66 @@ export const onInitialClientRender = () => {
             }
         }, 250));
 
+        /*-----------------------------------------------------------------
+     Carousel
+   -------------------------------------------------------------------*/
 
+        // Testimonials
+        $('.js-carousel-review').each(function() {
+            var carousel = new Swiper('.js-carousel-review', {
+                slidesPerView: 1,
+                spaceBetween: 30,
+                speed: 300,
+                grabCursor: true,
+                watchOverflow: true,
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true
+                },
+                autoplay: {
+                    delay: 5000,
+                },
+                breakpoints: {
+                    580: {
+                        slidesPerView: 2,
+                        spaceBetween: 20
+                    },
+                    991: {
+                        slidesPerView: 2
+                    }
+                }
+            });
+        });
+
+        // Clients
+        $('.js-carousel-clients').each(function() {
+            var carousel = new Swiper('.js-carousel-clients', {
+                slidesPerView: 4,
+                spaceBetween: 30,
+                //loop: true,
+                grabCursor: true,
+                watchOverflow: true,
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true
+                },
+                breakpoints: {
+                    320: {
+                        slidesPerView: 1,
+                        spaceBetween: 0
+                    },
+                    580: {
+                        slidesPerView: 2,
+                        spaceBetween: 30
+                    },
+                    991: {
+                        slidesPerView: 3,
+                        spaceBetween: 30
+                    }
+                }
+            });
+        });
+        
     })
       
 }
