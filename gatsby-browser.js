@@ -2,6 +2,9 @@ import anime from 'animejs/lib/anime.es'
 import "sticky-kit/dist/sticky-kit";
 import Swiper from 'swiper';
 import 'swiper/swiper-bundle.css';
+import "imagesloaded/imagesloaded";
+import "popper.js";
+import "bootstrap/dist/js/bootstrap";
 const $ = require( "jquery" );
 const autosize = require("autosize");
 const validator = require("validator");
@@ -9,6 +12,7 @@ const objectFitImages = require("object-fit-images");
 const mediumZoom = require("medium-zoom");
 const lazySizes = require("lazysizes");
 const ScrollMagic = require("scrollmagic");
+
 
 export const onInitialClientRender = () => {
     $(document).ready(function(){
@@ -23,7 +27,86 @@ export const onInitialClientRender = () => {
             isMobile = false;
         }
 
-        
+        /*-----------------------------------------------------------------
+      Tooltip
+    -------------------------------------------------------------------*/
+
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        });
+
+
+        /*-----------------------------------------------------------------
+     Loaded
+   -------------------------------------------------------------------*/
+
+        anime({
+            targets: 'body',
+            opacity: 1,
+            delay: 400,
+            complete: function(anim) {
+                progressBar(); //Init progress bar
+            }
+        });
+
+        $('body, .js-img-load').imagesLoaded({ background: !0 }).always( function( instance ) {
+            preloader(); //Init preloader
+        });
+
+        function preloader() {
+            var tl = anime.timeline({});
+            tl
+                .add({
+                    targets: '.preloader',
+                    duration: 1,
+                    opacity: 1
+                })
+                .add({
+                    targets: '.circle-pulse',
+                    duration: 300,
+                    //delay: 500,
+                    opacity: 1,
+                    zIndex: '-1',
+                    easing: 'easeInOutQuart'
+                },'+=500')
+                .add({
+                    targets: '.preloader__progress span',
+                    duration: 500,
+                    width: '100%',
+                    easing: 'easeInOutQuart'
+                },'-=500')
+                .add({
+                    targets: '.preloader',
+                    duration: 500,
+                    opacity: 0,
+                    zIndex: '-1',
+                    easing: 'easeInOutQuart'
+                });
+        };
+
+        /*-----------------------------------------------------------------
+      Progress bar
+    -------------------------------------------------------------------*/
+
+        function progressBar() {
+            $('.progress').each(function() {
+                var ctrl = new ScrollMagic.Controller();
+                new ScrollMagic.Scene({
+                    triggerElement: '.progress',
+                    triggerHook: 'onEnter',
+                    duration: 300
+                })
+                    .addTo(ctrl)
+                    .on("enter", function (e) {
+                        var progressBar = $('.progress-bar');
+                        progressBar.each(function(indx){
+                            $(this).css({'width': $(this).attr('aria-valuenow') + '%', 'z-index': '2'});
+                        });
+                    });
+            });
+        }
+
+
         /*-----------------------------------------------------------------
      Hamburger
    -------------------------------------------------------------------*/
@@ -176,7 +259,7 @@ export const onInitialClientRender = () => {
                 watchOverflow: true,
                 pagination: {
                     el: '.swiper-pagination',
-                    clickable: true
+                    clickable: true,
                 },
                 autoplay: {
                     delay: 5000,
@@ -189,7 +272,7 @@ export const onInitialClientRender = () => {
                     991: {
                         slidesPerView: 2
                     }
-                }
+                },
             });
         });
 
@@ -203,22 +286,24 @@ export const onInitialClientRender = () => {
                 watchOverflow: true,
                 pagination: {
                     el: '.swiper-pagination',
-                    clickable: true
+                    clickable: true,
+                    type: "bullets",
+                    
                 },
                 breakpoints: {
                     320: {
-                        slidesPerView: 1,
+                        slidesPerView: 3,
                         spaceBetween: 0
                     },
                     580: {
-                        slidesPerView: 2,
+                        slidesPerView: 5,
                         spaceBetween: 30
                     },
                     991: {
-                        slidesPerView: 3,
+                        slidesPerView: 6,
                         spaceBetween: 30
                     }
-                }
+                } 
             });
         });
         

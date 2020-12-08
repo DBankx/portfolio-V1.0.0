@@ -36,9 +36,6 @@ export default function SideBar({author, position, birthDay, email, phone, locat
                         <li className="contacts-block__item" data-toggle="tooltip" data-placement="top" title="Phone">
                             <i className="font-icon icon-phone" />{phone}
                         </li>
-                        <li className="contacts-block__item" data-toggle="tooltip" data-placement="top" title="Skype">
-                            <a href="skype:skype-example"><i className="font-icon icon-skype" />Felecia_Brown</a>
-                        </li>
                     </ul>
 
                     <a className="btn" href="https://google.com"><i className="font-icon icon-download" /> Download CV</a>

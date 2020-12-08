@@ -5,11 +5,22 @@ import designLogo from "../assets/icons/icon-design.svg";
 import developmentLogo from "../assets/icons/icon-dev.svg";
 import dataManagment from "../assets/icons/data-management.svg";
 import clock from "../assets/icons/clock.svg";
-import avatar1 from "../assets/img/Avatar-3.svg";
-import 'swiper/swiper-bundle.css';
+import "swiper/swiper-bundle.min.css";
 import feranmiWork from "../assets/img/feranmi_work.jpg";
 import pureHeart from "../assets/img/pureheart.jpg";
 import kelechiWork from "../assets/img/kelechi_work.jpg";
+import Csharp from "../assets/icons/csharp.svg";
+import netCore from "../assets/icons/NET_Core_Logo.svg";
+import javaScript from "../assets/icons/javascript.svg";
+import reactSvg from "../assets/icons/react.svg";
+import figma from "../assets/icons/figma-1.svg";
+import python from "../assets/icons/python.svg"
+import gatsbySvg from "../assets/icons/gatsbySvg.svg"
+import htmlSvg from "../assets/icons/html.svg";
+import cssSvg from "../assets/icons/css.svg";
+import sassSvg from "../assets/icons/sass.svg";
+import wordpressSvg from "../assets/icons/wordpress.svg";
+import nodeSvg from "../assets/icons/nodeSvg.svg";
 
 
 export default function About(){
@@ -23,7 +34,7 @@ export default function About(){
                     <p>My job is to build your website or web application so that it is functional and user-friendly but at the same time attractive. Moreover, I add personal touch to your product and make sure that is eye-catching and easy to use. My aim is to bring across your message and identity in the simplest and most creative way possible. </p>
 
                     <div className="box-inner pb-0">
-                        <h2 className="title title--h3">What I'm Doing</h2>
+                        <h2 className="title title--h3">What I can do</h2>
                         <div className="row">
                             
                             <div className="col-12 col-lg-6">
@@ -113,7 +124,67 @@ export default function About(){
                                 
                             </div>
 
-                            <div className="swiper-pagination" />
+                            <div className="swiper-pagination"></div>
+                        </div>
+                    </div>
+                    
+                    
+                    <div className="box-inner box-inner--rounded">
+                        <h2 className="title title--h3">Tools i'm familiar with</h2>
+
+                        <div className="swiper-container js-carousel-clients">
+                            <div className="swiper-wrapper">
+                                <div className="swiper-slide" >
+                                    <a href="#"><img data-toggle="tooltip" data-placement="bottom" title="CSharp" style={{width: "70px"}} src={Csharp} alt="Logo" /></a>
+                                </div>
+
+                                <div className="swiper-slide">
+                                    <a href="https://docs.microsoft.com/en-us/aspnet/core/?view=aspnetcore-5.0" rel="noreferrer noopener" target="_blank"><img data-toggle="tooltip" data-placement="bottom" title="Asp.net core" src={netCore} style={{width: "70px"}} alt="Logo" /></a>
+                                </div>
+
+                                <div className="swiper-slide">
+                                    <a href="https://www.python.org/" rel="noreferrer noopener" target="_blank"><img data-toggle="tooltip" data-placement="bottom" title="Python" src={python} style={{width: "70px"}} alt="Logo" /></a>
+                                </div>
+
+                                <div className="swiper-slide">
+                                    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" rel="noreferrer noopener" target="_blank"><img data-toggle="tooltip" data-placement="bottom" title="JavaScript" src={javaScript} alt="Logo" style={{width: "70px"}} /></a>
+                                </div>
+
+                                <div className="swiper-slide">
+                                    <a href="https://nodejs.org/en/" rel="noreferrer noopener" target="_blank"><img data-toggle="tooltip" data-placement="bottom" title="JavaScript" src={nodeSvg} alt="Logo" style={{width: "120px"}} /></a>
+                                </div>
+
+                                <div className="swiper-slide">
+                                    <a href="https://reactjs.org/" rel="noreferrer noopener" target="_blank"><img data-toggle="tooltip" data-placement="bottom" title="React" src={reactSvg} style={{width: "80px"}} alt="Logo" /></a>
+                                </div>
+
+                                <div className="swiper-slide">
+                                    <a href="https://www.gatsbyjs.com/" rel="noreferrer noopener" target="_blank"><img data-toggle="tooltip" data-placement="bottom" title="Gatsby" src={gatsbySvg} style={{width: "70px"}} alt="Logo" /></a>
+                                    
+                                </div>
+
+                                <div className="swiper-slide">
+                                    <a href="https://www.figma.com/" rel="noreferrer noopener" target="_blank"><img data-toggle="tooltip" data-placement="bottom" title="Figma" src={figma} style={{width: "50px"}} alt="Logo" /></a>
+                                </div>
+
+                                <div className="swiper-slide">
+                                    <a href="#"><img data-toggle="tooltip" data-placement="bottom" title="Html" src={htmlSvg} style={{width: "70px"}} alt="Logo" /></a>
+                                </div>
+
+                                <div className="swiper-slide">
+                                    <a href="#"><img src={cssSvg} style={{width: "50px"}} alt="Logo" data-toggle="tooltip" data-placement="bottom" title="Css" /></a>
+                                </div>
+
+                                <div className="swiper-slide">
+                                    <a href="https://sass-lang.com/" rel="noreferrer noopener" target="_blank"><img src={sassSvg} style={{width: "95px"}} alt="Logo" data-toggle="tooltip" data-placement="bottom" title="Sass" /></a>
+                                </div>
+
+                                <div className="swiper-slide">
+                                    <a href="https://wordpress.com/" rel="noreferrer noopener" target="_blank"><img data-toggle="tooltip" data-placement="bottom" title="Wordpress" src={wordpressSvg} style={{width: "70px"}} alt="Logo" /></a>
+                                </div>
+                            </div>
+
+                            <div className="swiper-pagination"></div>
                         </div>
                     </div>
 

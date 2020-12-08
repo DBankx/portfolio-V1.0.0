@@ -4,6 +4,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import SideBar from "./sidebar";
 import Menu from "./menu";
 import "../assets/styles/style.css";
+import Footer from "./footer";
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -34,6 +35,7 @@ const Layout = ({ children }) => {
                      <Menu />
                       {children}
                   </div>
+                  <Footer />
               </div>
               
           </div>
