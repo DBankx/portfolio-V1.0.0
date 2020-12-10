@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useEffect} from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import SideBar from "./sidebar";
@@ -24,6 +24,8 @@ const Layout = ({ children }) => {
   `)
 
     const {location, birthDay, emailAddress, position, phone, author} = data.site.siteMetadata
+    
+    
     
   return (
       <main className="main">

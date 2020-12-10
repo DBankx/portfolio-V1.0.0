@@ -5,7 +5,6 @@ import designLogo from "../assets/icons/icon-design.svg";
 import developmentLogo from "../assets/icons/icon-dev.svg";
 import dataManagment from "../assets/icons/data-management.svg";
 import clock from "../assets/icons/clock.svg";
-import "swiper/swiper-bundle.min.css";
 import feranmiWork from "../assets/img/feranmi_work.jpg";
 import pureHeart from "../assets/img/pureheart.jpg";
 import kelechiWork from "../assets/img/kelechi_work.jpg";
@@ -21,7 +20,6 @@ import cssSvg from "../assets/icons/css.svg";
 import sassSvg from "../assets/icons/sass.svg";
 import wordpressSvg from "../assets/icons/wordpress.svg";
 import nodeSvg from "../assets/icons/nodeSvg.svg";
-
 
 export default function About(){
     return (
@@ -151,7 +149,7 @@ export default function About(){
                                 </div>
 
                                 <div className="swiper-slide">
-                                    <a href="https://nodejs.org/en/" rel="noreferrer noopener" target="_blank"><img data-toggle="tooltip" data-placement="bottom" title="JavaScript" src={nodeSvg} alt="Logo" style={{width: "120px"}} /></a>
+                                    <a href="https://nodejs.org/en/" rel="noreferrer noopener" target="_blank"><img data-toggle="tooltip" data-placement="bottom" title="Node js" src={nodeSvg} alt="Logo" style={{width: "120px"}} /></a>
                                 </div>
 
                                 <div className="swiper-slide">

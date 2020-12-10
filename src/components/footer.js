@@ -4,7 +4,7 @@ export default function Footer(){
     const year = new Date().getFullYear();
     return (
         <div>
-            <footer class="footer">© {year} Hundeyin Oluwadamilola</footer>
+            <footer className="footer">© {year} Hundeyin Oluwadamilola</footer>
         </div>
     )
 }

@@ -14,7 +14,7 @@ const lazySizes = require("lazysizes");
 const ScrollMagic = require("scrollmagic");
 
 
-export const onInitialClientRender = () => {
+export const onRouteUpdate = () => {
     $(document).ready(function(){
 
         var isMobile = false;
@@ -27,13 +27,40 @@ export const onInitialClientRender = () => {
             isMobile = false;
         }
 
+        $('#devtree').popover({
+            trigger: 'focus',
+            animation: true,
+        })
         /*-----------------------------------------------------------------
       Tooltip
     -------------------------------------------------------------------*/
 
         $(function () {
             $('[data-toggle="tooltip"]').tooltip()
+            
         });
+        
+        /*-----------------------------------------------------------------
+      Progress bar
+    -------------------------------------------------------------------*/
+
+        function progressBar() {
+            $('.progress').each(function() {
+                var ctrl = new ScrollMagic.Controller();
+                new ScrollMagic.Scene({
+                    triggerElement: '.progress',
+                    triggerHook: 'onEnter',
+                    duration: 300
+                })
+                    .addTo(ctrl)
+                    .on("enter", function (e) {
+                        var progressBar = $('.progress-bar');
+                        progressBar.each(function(indx){
+                            $(this).css({'width': $(this).attr('aria-valuenow') + '%', 'z-index': '2'});
+                        });
+                    });
+            });
+        }
 
 
         /*-----------------------------------------------------------------
@@ -84,27 +111,33 @@ export const onInitialClientRender = () => {
                 });
         };
 
-        /*-----------------------------------------------------------------
-      Progress bar
-    -------------------------------------------------------------------*/
+   /*--------------------------------------------------------
+    Loading projects
+   ------------------------------------------------------------ */
 
-        function progressBar() {
-            $('.progress').each(function() {
-                var ctrl = new ScrollMagic.Controller();
-                new ScrollMagic.Scene({
-                    triggerElement: '.progress',
-                    triggerHook: 'onEnter',
-                    duration: 300
-                })
-                    .addTo(ctrl)
-                    .on("enter", function (e) {
-                        var progressBar = $('.progress-bar');
-                        progressBar.each(function(indx){
-                            $(this).css({'width': $(this).attr('aria-valuenow') + '%', 'z-index': '2'});
-                        });
-                    });
-            });
-        }
+        
+        var tlp = anime.timeline({
+            easing: "easeOutExpo",
+            duration: 900,
+            direction: "reverse",
+        })
+        
+        tlp.add({
+            targets: ".project-content",
+            translateX: -250,
+            direction: "reverse",
+            opacity: [1, 0],
+            easing: 'easeInElastic(1, .7)'
+        })
+
+        tlp.add({
+            targets: ".project-box-image",
+            translateX: 250,
+            direction: "reverse",
+            opacity: [1, 0],
+            easing: 'easeInElastic(1, .7)',
+        }, "-=900")
+
 
 
         /*-----------------------------------------------------------------
@@ -288,7 +321,7 @@ export const onInitialClientRender = () => {
                     el: '.swiper-pagination',
                     clickable: true,
                     type: "bullets",
-                    
+
                 },
                 breakpoints: {
                     320: {
@@ -306,7 +339,102 @@ export const onInitialClientRender = () => {
                 } 
             });
         });
+
+        /*-----------------------------------------------------------------
+     Scroll indicator
+   -------------------------------------------------------------------*/
+
+        function scrollIndicator() {
+            $(window).on('scroll', function() {
+                var wintop = $(window).scrollTop(), docheight =
+                    $(document).height(), winheight = $(window).height();
+                var scrolled = (wintop/(docheight-winheight))*100;
+                $('.scroll-line').css('width', (scrolled + '%'));
+            });
+        }
+
+        scrollIndicator(); //Init
+
+
+        /*-----------------------------------------------------------------
+          ScrollTo
+        -------------------------------------------------------------------*/
+
+        function scrollToTop() {
+            var $backToTop = $('.back-to-top'),
+                $showBackTotop = $(window).height();
+
+            $backToTop.hide();
+
+
+            $(window).scroll( function() {
+                var windowScrollTop = $(window).scrollTop();
+                if( windowScrollTop > $showBackTotop ) {
+                    $backToTop.fadeIn('slow');
+                } else {
+                    $backToTop.fadeOut('slow');
+                }
+            });
+
+            $backToTop.on('click', function (e) {
+                e.preventDefault();
+                $(' body, html ').animate( {scrollTop : 0}, 'slow' );
+            });
+        }
+
+        scrollToTop(); //Init
+
+
+        /*-----------------------------------------------------------------
+     Scroll indicator
+   -------------------------------------------------------------------*/
+
+        function scrollIndicator() {
+            $(window).on('scroll', function() {
+                var wintop = $(window).scrollTop(), docheight =
+                    $(document).height(), winheight = $(window).height();
+                var scrolled = (wintop/(docheight-winheight))*100;
+                $('.scroll-line').css('width', (scrolled + '%'));
+            });
+        }
+
+        scrollIndicator(); //Init
+
+
+        /*-----------------------------------------------------------------
+          ScrollTo
+        -------------------------------------------------------------------*/
+
+        function scrollToTop() {
+            var $backToTop = $('.back-to-top'),
+                $showBackTotop = $(window).height();
+
+            $backToTop.hide();
+
+
+            $(window).scroll( function() {
+                var windowScrollTop = $(window).scrollTop();
+                if( windowScrollTop > $showBackTotop ) {
+                    $backToTop.fadeIn('slow');
+                } else {
+                    $backToTop.fadeOut('slow');
+                }
+            });
+
+            $backToTop.on('click', function (e) {
+                e.preventDefault();
+                $(' body, html ').animate( {scrollTop : 0}, 'slow' );
+            });
+        }
+
+        scrollToTop(); //Init
+
         
+      //-------------------------------
+        // switch css
+      //-------------------------------  
+       
+
     })
-      
+
 }
