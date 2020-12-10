@@ -2774,18 +2774,6 @@ button:focus {
 
 
 
-.project-link-before::before{
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  inset: 0px;
-  z-index: 0;
-  transition: 2s ease;
-  /*background: rgba(48,76,253,0.58);*/
-  /*mix-blend-mode: color;*/
-  border-radius: 20px;
-}
 
 .project-box-image:hover .project-link-before{
   background: none;
@@ -2810,7 +2798,9 @@ button:focus {
     background: none;
     border-radius: 0;
   }
-  
+  .btn-project{
+    margin-top: 1em;
+  }
   .project-explain-box p{
     padding: 0.2em 0;
   }
@@ -2829,7 +2819,7 @@ button:focus {
   }
 
   .project-box{
-    margin: 0 0 3em 0;
+    margin: 0;
     display: flex;
     flex-wrap: wrap;
   }
@@ -2885,6 +2875,10 @@ button:focus {
     margin: auto;
   }
   
+  .project-box-image{
+    margin: 0.5em 0;
+  }
+  
   .project-right{
     text-align: initial;
     position: relative;
@@ -2893,5 +2887,61 @@ button:focus {
   .links-right{
     justify-content: initial;
   }
+}
+
+.soft-line{
+  border: 0;
+  border-bottom: 1px dashed #ccc;
+  background: #999;
+}
+
+.folder-block{
+  box-shadow: 0 0.5rem 1rem rgba(48, 76, 253, 0.15), 0 0.125rem 0.25rem rgba(48, 76, 253, 0.15);
+  background-color: #F1F2F2;
+  border-radius: 5px;
+  padding: 1em;
+}
+
+.all-projects-container{
+  margin-top: 1em;
+}
+
+.folder-top-items{
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+
+.folder-top{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.folder-top-link{
+  width: 15px;
+    margin: 0 0.5em;
+}
+
+.all-projects-tech li{
+  margin: 0 0.5em;
+  font-size: 0.9em;
+}
+
+.folder{
+  width: 30px;
+}
+
+.folder-content{
+  min-height: calc(100% - 70px);
+}
+
+.folder-footer{
+  height: 50px;
+}
+
+
+.folder-block{
+  height: 100%;
 }
 /*# sourceMappingURL=style.css.map */

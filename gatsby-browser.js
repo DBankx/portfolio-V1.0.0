@@ -5,11 +5,11 @@ import 'swiper/swiper-bundle.css';
 import "imagesloaded/imagesloaded";
 import "popper.js";
 import "bootstrap/dist/js/bootstrap";
+import mediumZoom from "medium-zoom";
 const $ = require( "jquery" );
 const autosize = require("autosize");
 const validator = require("validator");
 const objectFitImages = require("object-fit-images");
-const mediumZoom = require("medium-zoom");
 const lazySizes = require("lazysizes");
 const ScrollMagic = require("scrollmagic");
 
@@ -31,6 +31,16 @@ export const onRouteUpdate = () => {
             trigger: 'focus',
             animation: true,
         })
+
+        $('#qlip').popover({
+            trigger: 'focus',
+            animation: true,
+        })
+
+        $('#intaviewer').popover({
+            trigger: 'focus',
+            animation: true,
+        }) 
         /*-----------------------------------------------------------------
       Tooltip
     -------------------------------------------------------------------*/
@@ -429,11 +439,15 @@ export const onRouteUpdate = () => {
 
         scrollToTop(); //Init
 
-        
-      //-------------------------------
-        // switch css
-      //-------------------------------  
-       
+
+        /*-----------------------------------------------------------------
+       mediumZoom
+     -------------------------------------------------------------------*/
+
+        mediumZoom('[data-zoom]', {
+            margin: 30,
+            background: "#000",
+        });
 
     })
 

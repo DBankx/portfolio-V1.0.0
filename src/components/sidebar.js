@@ -38,7 +38,7 @@ export default function SideBar({author, position, birthDay, email, phone, locat
                         </li>
                     </ul>
 
-                    <a className="btn" href="https://google.com"><i className="font-icon icon-download" />Let's have a chat?</a>
+                    <a className="btn" href="https://google.com"><i className="font-icon icon-send" />Let's have a chat?</a>
                 </div>
             </div>
 
