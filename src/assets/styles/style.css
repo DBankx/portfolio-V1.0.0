@@ -2944,4 +2944,17 @@ button:focus {
 .folder-block{
   height: 100%;
 }
+
+.gutters {
+  margin-right: 1em;
+  margin-left: 1em;
+}
+
+.gutter > .col,
+> [class*="col-"] {
+  padding-right: 1em;
+  padding-left: 1em;
+}
+
+
 /*# sourceMappingURL=style.css.map */
