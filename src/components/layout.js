@@ -3,8 +3,8 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import SideBar from "./sidebar";
 import Menu from "./menu";
-import "../assets/styles/style.css";
 import Footer from "./footer";
+import "../assets/styles/style.css";
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`

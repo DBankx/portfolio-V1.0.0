@@ -153,7 +153,7 @@ export default function AllProjects(){
                                 </div>
                             </div>
                             <h3 style={{marginTop: "0.6em"}} className="title title--h3 timeline__title">
-                                Reactivity (Tutorial)
+                                Reactivity
                             </h3>
                             <p>An activity suggestion website, where users can post an activity, join activity, real-time chat and follow other users</p>
                         </div>
