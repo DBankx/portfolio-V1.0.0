@@ -36,7 +36,7 @@ export default function Blog(){
     
     return (
         <Layout>
-            <SEO title="Blogs" />
+            <SEO title="Blog" description="I like talking about various web technologies and other stuff related to typescript and asp.net core and other trends like graphql, server-side rendering and programming languages etc. This blog expresses my views of various technologies and scenarios I have come across in realtime." />
             <div className="pb-2">
                 <h1 className="title title--h1 first-title title__separate">Blog</h1>
             </div> 
@@ -45,7 +45,7 @@ export default function Blog(){
                     <article className="news-item box" key={blog.node.id}>
                         <div className="news-item__image-wrap overlay overlay--45">
                             <div className="news-item__date">{blog.node.frontmatter.date}</div>
-                            <a className="news-item__link" href={`/blog/${blog.node.fields.slug}`}></a>
+                            <Link className="news-item__link" to={`/blog/${blog.node.fields.slug}`}></Link>
                             <img className="cover lazyload" src={blog.node.frontmatter.cover.childImageSharp.fluid.src} alt="" />
                         </div>
                         <div className="news-item__caption">

@@ -14,7 +14,7 @@ export default function Menu(){
 
             <div className="inner-menu js-menu">
                 <ul className="nav">
-                    <li className="nav__item"><Link activeClassName="active" to="/about">About</Link></li>
+                    <li className="nav__item"><Link activeClassName="active"  to="/">About</Link></li>
                     <li className="nav__item"><Link activeClassName="active"  to="/resume">Resume</Link></li>
                     <li className="nav__item"><Link activeClassName="active" to="/portfolio">Portfolio</Link></li>
                     <li className="nav__item"><Link activeClassName="active" to="/blog">Blog</Link></li>

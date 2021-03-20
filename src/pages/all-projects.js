@@ -2,9 +2,9 @@
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import {Link} from "gatsby";
-import folder from "../assets/icons/folder.svg";
-import github from "../assets/icons/github.svg";
-import foreign from "../assets/icons/foreign.svg";
+import folder from "../images/icons/folder.svg";
+import github from "../images/icons/github.svg";
+import foreign from "../images/icons/foreign.svg";
 
 export default function AllProjects(){
     return (

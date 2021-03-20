@@ -1,12 +1,12 @@
 ﻿import React from "react";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-import devtree from "../assets/images/devtree.png";
-import github from "../assets/icons/github.svg";
-import externalLink from "../assets/icons/foreign.svg";
-import info from "../assets/icons/info.svg";
-import qlip from "../assets/images/qlip.png";
-import intaviewer from "../assets/images/intaviewer.png";
+import devtree from "../images/projects/devtree.png";
+import github from "../images/icons/github.svg";
+import externalLink from "../images/icons/foreign.svg";
+import info from "../images/icons/info.svg";
+import qlip from "../images/projects/qlip.png";
+import intaviewer from "../images/projects/intaviewer.png";
 import {useMediaQuery} from "react-responsive";
 import {Link} from "gatsby";
 
@@ -21,57 +21,7 @@ export default function Portfolio(){
             
         {/* Project */}
        <div className="js-masonry js-filter-container">
-        <div className="project-box">
-            <div className="project-content">
-                <p style={{color: "#304CFD"}}>Featured Project</p>
-            <h3 className="title title--h3 timeline__title">
-                Devtree
-                
-            </h3>
-                {isMobile && (
-                    <div className="project-box-image">
-                        <div className="project-showcase">
-                            <figure >
-                                <img  data-zoom src={devtree} alt="" />
-                            </figure>
-                        </div>
-                    </div>
-                )} 
-            <div className="project-explain-box">
-                <p>A social network app for developers built with the "MERN" stack that includes authentication, dashboards, profiles, forum posts and follow features.</p>
-            </div>
-            <ul className="project-tech-list">
-                <li>Node.js</li>
-                <li>Express</li>
-                <li>React</li>
-                <li>Mongo</li>
-            </ul>
-            
-            <ul className="project-links">
-                <li data-toggle="tooltip" data-placement="bottom" title="Github"><a href="https://github.com/DBankx/DEVTREE" rel="noreferrer noopener" target="_blank"><img className="project-icon" src={github} alt="github" /></a></li>
-                <li data-toggle="tooltip" data-placement="bottom" title="View project"><a href="https://royal-eds-71788.herokuapp.com/" rel="noreferrer noopener" target="_blank"><img className="project-icon" src={externalLink} alt="link" /></a></li>
-                <li data-toggle="tooltip" data-placement="bottom" title="Demo details"><button type="button" id="devtree" title="Demo login" className="info-btn" data-container="body" data-toggle="popover" data-placement="top" data-html={true} data-content={`*The details below is for demo use only username: initial5
-                password: initial5`}>
-                    <img src={info} alt="" style={{width: "18px"}} />
-                </button></li>
-            </ul>
-            </div>
-
-            {!isMobile && (
-                <div className="project-box-image">
-                    <div className="project-showcase">
-                        <figure >
-                            <img  data-zoom src={devtree} alt="" />
-                        </figure>
-                    </div>
-                </div>
-            )}
-
-        </div>
-
-           {isMobile && (
-               <hr className="soft-line" />
-           )}
+      
 
            <div className="project-box box-right">
                 <div className="project-content project-right">
@@ -161,6 +111,61 @@ export default function Portfolio(){
                 )}
 
             </div>
+
+           {isMobile && (
+               <hr className="soft-line" />
+           )}
+
+           <div className="project-box box-right">
+               <div className="project-content project-right">
+                   <p style={{color: "#304CFD"}}>Featured Project</p>
+                   <h3 className="title title--h3 timeline__title">
+                       Devtree
+
+                   </h3>
+                   {isMobile && (
+                       <div className="project-box-image image-left">
+                           <div className="project-showcase">
+                               <figure >
+                                   <img  data-zoom src={devtree} alt="" />
+                               </figure>
+                           </div>
+                       </div>
+                   )}
+                   <div className="project-explain-box explain-right">
+                       <p>A social network app for developers built with the "MERN" stack that includes authentication, dashboards, profiles, forum posts and follow features.</p>
+                   </div>
+                   <ul className="project-tech-list tech-right">
+                       <li>Node.js</li>
+                       <li>Express</li>
+                       <li>React</li>
+                       <li>Mongo</li>
+                   </ul>
+
+                   <ul className="project-links links-right">
+                       <li data-toggle="tooltip" data-placement="bottom" title="Github"><a href="https://github.com/DBankx/DEVTREE" rel="noreferrer noopener" target="_blank"><img className="project-icon" src={github} alt="github" /></a></li>
+                       <li data-toggle="tooltip" data-placement="bottom" title="View project"><a href="https://royal-eds-71788.herokuapp.com/" rel="noreferrer noopener" target="_blank"><img className="project-icon" src={externalLink} alt="link" /></a></li>
+                       <li data-toggle="tooltip" data-placement="bottom" title="Demo details"><button type="button" id="devtree" title="Demo login" className="info-btn" data-container="body" data-toggle="popover" data-placement="top" data-html={true} data-content={`*The details below is for demo use only username: initial5
+                password: initial5`}>
+                           <img src={info} alt="" style={{width: "18px"}} />
+                       </button></li>
+                   </ul>
+               </div>
+
+               {!isMobile && (
+                   <div className="project-box-image image-left">
+                       <div className="project-showcase">
+                           <figure >
+                               <img  data-zoom src={devtree} alt="" />
+                           </figure>
+                       </div>
+                   </div>
+               )}
+
+           </div>
+
+           
+           
        </div>
             
             <Link to="/all-projects" className="btn btn-project" href=""><i className="font-icon icon-chevron-right" />View all projects</Link>

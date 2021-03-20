@@ -1,10 +1,10 @@
 ﻿import React, {Fragment} from "react";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-import educationIcon from "../assets/icons/icon-education.svg";
-import experienceIcon from "../assets/icons/icon-experience.svg";
-import marker from "../assets/icons/maps-and-flags.svg";
-import officeBuilding from "../assets/icons/office-building.svg";
+import educationIcon from "../images/icons/icon-education.svg";
+import experienceIcon from "../images/icons/icon-experience.svg";
+import marker from "../images/icons/maps-and-flags.svg";
+import officeBuilding from "../images/icons/office-building.svg";
 
 export default function Resume(){
     return (
@@ -47,6 +47,24 @@ export default function Resume(){
                         <div className="col-12 col-lg-6">
                             <h2 className="title title--h3"><img className="title-icon" src={experienceIcon} alt="" /> Experience</h2>
                             <div className="timeline">
+
+                                <article className="timeline__item">
+                                    <h5 className="title title--h5 timeline__title">Front-end web developer</h5>
+                                    <span className="timeline__period">2021 — Present</span>
+                                    <span style={{display: "block"}}><img src={officeBuilding} alt="" style={{width: "20px"}} />
+                                    <a style={{marginLeft: "0.2em"}} href="https://talenture.co.uk/" rel="noreferrer noopener" target="_blank">Talenture Group</a>
+                                    </span>
+                                    <div className="timeline__description">
+                                        <ul style={{margin: "0", padding: "0"}}>
+                                            <li>Collaborate with the backend team for API integration</li>
+                                            <li>Integrating of user-facing elements with server side logic</li>
+                                            <li>Design and Develop new user-facing features</li>
+                                            <li>Ensure the technical feasibility of UI/UX designs</li>
+                                            <li>Routinely inspect server code for speed optimization</li>
+                                            <li>Maintain a stable server with zero downtime</li>
+                                        </ul>
+                                    </div>
+                                </article>
                                 
                                 <article className="timeline__item">
                                     <h5 className="title title--h5 timeline__title">Front-end web developer (Intern)</h5>
@@ -66,7 +84,7 @@ export default function Resume(){
                                 <article className="timeline__item">
                                     <h5 className="title title--h5 timeline__title">Full-stack freelance developer</h5>
                                     <span className="timeline__period">2018 — 2019</span>
-                                    <span style={{display: "block"}}><img src={marker} alt="" style={{width: "20px"}} />Leicester, UK</span>
+                                    <span style={{display: "block"}}><img src={marker} alt="location-marker" style={{width: "20px"}} />Leicester, UK</span>
                                     <div className="timeline__description">
                                         <ul style={{margin: "0", padding: "0"}}>
                                             <li>Created and managed websites for numerous clients to meet
@@ -118,6 +136,12 @@ export default function Resume(){
                                         <div className="progress-text"><span>Illustrator</span></div>
                                     </div>
 
+                                    <div className="progress">
+                                        <div className="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+                                            <div className="progress-text"><span>Photoshop</span><span>60%</span></div>
+                                        </div>
+                                        <div className="progress-text"><span>Photoshop</span></div>
+                                    </div>
                                     
                                 </div>
 

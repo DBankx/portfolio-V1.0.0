@@ -1,6 +1,7 @@
 import anime from 'animejs/lib/anime.es'
 import "sticky-kit/dist/sticky-kit";
 import Swiper from 'swiper';
+import SwiperCore, {Pagination} from "swiper";
 import 'swiper/swiper-bundle.css';
 import "imagesloaded/imagesloaded";
 import "popper.js";
@@ -12,6 +13,8 @@ const validator = require("validator");
 const objectFitImages = require("object-fit-images");
 const lazySizes = require("lazysizes");
 const ScrollMagic = require("scrollmagic");
+
+SwiperCore.use([Pagination]);
 
 
 export const onRouteUpdate = () => {
@@ -448,6 +451,7 @@ export const onRouteUpdate = () => {
             margin: 30,
             background: "#000",
         });
+        
 
     })
 

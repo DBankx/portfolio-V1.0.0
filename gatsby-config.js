@@ -9,7 +9,8 @@ module.exports = {
     emailAddress: "damihundeyin@gmail.com",
     phone: "+234 (0) 817-270-2507",
     position: "Full-stack engineer",
-    url: "https://hunndy.com"
+    url: "https://hunndy.com",
+    linkedin: "https://www.linkedin.com/in/hundy/"
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -32,6 +33,7 @@ module.exports = {
         theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        legacy: true
       },
     },
     {
@@ -43,7 +45,9 @@ module.exports = {
             resolve: "gatsby-remark-images",
             options:{
               maxWidth: 750,
-              linkImagesToOriginal: false
+              quality: 80,
+              showCaptions: true,
+              linkImagesToOriginal: false,
             }
           }
         ]

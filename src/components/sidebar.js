@@ -1,7 +1,8 @@
 ﻿import React from "react";
-import profileImage from "../assets/img/profile_image.jpg";
+import profileImage from "../images/Image-blue.jpg";
+import {Link} from "gatsby";
 
-export default function SideBar({author, position, birthDay, email, phone, location}){
+export default function SideBar({author, position, birthDay, email, phone, location, linkedin}){
     return (
         <aside className="col-12 col-md-12 col-xl-3">
             <div className="sidebar box shadow pb-0 sticky-column">
@@ -18,7 +19,7 @@ export default function SideBar({author, position, birthDay, email, phone, locat
                     <div className="social">
                         <a className="social__link" href="https://www.facebook.com/"><i className="font-icon icon-facebook" /></a>
                         <a className="social__link" href="https://www.behance.com/"><i className="font-icon icon-twitter" /></a>
-                        <a className="social__link" href="https://www.linkedin.com/"><i className="font-icon icon-linkedin2" /></a>
+                        <a className="social__link" href={linkedin}><i className="font-icon icon-linkedin2" /></a>
                     </div>
                 </div>
 
@@ -38,7 +39,7 @@ export default function SideBar({author, position, birthDay, email, phone, locat
                         </li>
                     </ul>
 
-                    <a className="btn" href="https://google.com"><i className="font-icon icon-send" />Let's have a chat?</a>
+                    <Link className="btn" to="/contact"><i className="font-icon icon-send" />Let's have a chat?</Link>
                 </div>
             </div>
 
