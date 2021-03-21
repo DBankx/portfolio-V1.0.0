@@ -9,7 +9,9 @@ import officeBuilding from "../images/icons/office-building.svg";
 export default function Resume(){
     return (
         <Layout>
-            <SEO title="Resume" />
+            <SEO title="Resume" description="My resume consists of my biodata of experience. You can hire me if you feel
+          I'm good for any position in your organization. I'm open to various challenges that come
+          in the way of building various web applications." />
             <Fragment>
                 <div className="pb-3">
                     <h1 className="title title--h1 first-title title__separate">Resume</h1>
@@ -99,7 +101,7 @@ export default function Resume(){
                     </div>
                     
                     <div style={{marginBottom: "2em"}}>
-                    <a href="#"  style={{textDecoration: "none"}}><i className="font-icon icon-download" /> Download CV</a>
+                    <a href="https://www.dropbox.com/s/f7vzdn9crg6z28u/Oluwadamilola%27s%20Resume%20%287%29.pdf?dl=0" rel="noreferrer noopener" target="_blank"  style={{textDecoration: "none"}}><i className="font-icon icon-download" /> Download CV</a>
                     </div>
 
                     <div className="box-inner box-inner--rounded">

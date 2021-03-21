@@ -1,4 +1,4 @@
-﻿import React, {Fragment} from "react";
+﻿import React from "react";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import designLogo from "../images/icons/icon-design.svg";
@@ -71,7 +71,7 @@ export default function Index(){
                                     <img className="case-item__icon" src={clock} alt="" />
                                     <div>
                                         <h3 className="title title--h5">Timley Delivery</h3>
-                                        <p className="case-item__caption">I will always deliver your web applications in a punctual, timley and professional manner.</p>
+                                        <p className="case-item__caption">I will always deliver your web applications in a punctual, timley and professional manner to better improve you or your company's time to market.</p>
                                     </div>
                                 </div>
                             </div>

@@ -2,7 +2,8 @@
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import ReactMapGL, {Marker, Popup} from 'react-map-gl';
-import mapMarker from "../images/icons/pin.svg";
+import * as yup from "yup";
+import {Formik} from "formik";
 
 export default function Contact() {
     const MAPBOX_TOKEN = 'pk.eyJ1IjoiZGJhbmt4IiwiYSI6ImNrandpNnRpcTBpc24ycGxja3hjaHdudnAifQ.IsBBI65qv2qJKZPd0kIyYw';
@@ -19,6 +20,12 @@ export default function Contact() {
         (newViewport) => setViewport(newViewport),
         []
     );
+    
+    const validationSchema = yup.object().shape({
+        name: yup.string().required("Your full name is required!"),
+        email: yup.string().email("Please use a valid email address").required("Your email is required"),
+        message: yup.string().required("Your full name is required!")
+    })
     
     return (
         <Layout>
@@ -72,21 +79,33 @@ export default function Contact() {
             
             <h2 className="title title--h3">Contact Form</h2>
 
-            <form id="contact-form" className="contact-form" method="post" action="https://getform.io/f/aa96ef04-8a99-4b00-85ca-cb0d0ee4105c" data-toggle="validator">
+                <Formik validationSchema={validationSchema} initialValues={{name: "", email:"", message: ""}} onSubmit={values => console.log(values)}>
+                    {({
+                        handleSubmit,
+                        values,
+                        errors,
+                        touched,
+                        handleChange,
+                        handleBlur,
+                        isValid,
+                        dirty,
+                        isSubmitting
+                      }) => (
+            <form onSubmit={handleSubmit} id="contact-form" className="contact-form" >
                 <div className="row">
-                    <div className="form-group col-12 col-md-6">
+                    <div className={`form-group col-12 col-md-6 ${!!errors.name && touched.name && "has-error"}`}>
                         <i className="font-icon icon-user" />
-                        <input type="text" className="input input__icon form-control" id="name" name="name" placeholder="Full name" required="required" autoComplete="on" onInvalid="setCustomValidity('Fill in the field')" onKeyUp="setCustomValidity('')" />
-                            <div className="help-block with-errors" />
+                        <input type="text" className="input input__icon form-control" id="name" name="name" placeholder="Full name" value={values.name}  autoComplete="on" onChange={handleChange} onBlur={handleBlur} />
+                        {errors.name && touched.name  && <div className="help-block with-errors">{errors.name}</div>}
                     </div>
-                    <div className="form-group col-12 col-md-6">
-                        <i className="font-icon icon-envelope" />
-                        <input type="email" className="input input__icon form-control" id="email" name="email" placeholder="Email address" required="required" autoComplete="on" onInvalid="setCustomValidity('Email is incorrect')" onKeyUp="setCustomValidity('')" />
-                            <div className="help-block with-errors" />
+                    <div className={`form-group col-12 col-md-6 ${!!errors.email && touched.email && "has-error"}`}>
+                        <i className="font-icon icon-user" />
+                        <input type="email" className="input input__icon form-control" id="email" name="email" placeholder="Email address" value={values.email}  autoComplete="on" onChange={handleChange} onBlur={handleBlur} />
+                        {errors.email && touched.email && <div className="help-block with-errors">{errors.email}</div>}
                     </div>
-                    <div className="form-group col-12 col-md-12">
-                        <textarea className="textarea form-control" id="message" name="message" placeholder="Your Message"  rows="4" required="required" onInvalid="setCustomValidity('Fill in the field')" onKeyUp="setCustomValidity('')" />
-                        <div className="help-block with-errors" />
+                    <div className={`form-group col-12 col-md-12 ${!!errors.message && touched.message && "has-error"}`}>
+                        <textarea className="textarea form-control has-error" id="message" name="message" placeholder="Your Message"  rows="4" required="required" onChange={handleChange} onBlur={handleBlur} value={values.message} />
+                        {errors.message && touched.message && <div className="help-block with-errors">{errors.message}</div>}
                     </div>
                 </div>
                 <div className="row">
@@ -94,10 +113,12 @@ export default function Contact() {
                         <div id="validator-contact" className="hidden" />
                     </div>
                     <div className="col-12 col-md-6 order-1 order-md-2 text-right">
-                        <button type="submit" className="btn"><i className="font-icon icon-send" /> Send Message</button>
+                        <button disabled={!isValid || isSubmitting || !dirty} type="submit" className="btn">{isSubmitting ? <div><div className="spinner-border spinner-border-sm text-light" role="status" /> Sending message...</div> : <div><i className="font-icon icon-send" /> Send Message</div>}</button>
                     </div>
                 </div>
             </form>
+                    )}
+                </Formik>
             </div>
         </Layout>
     )

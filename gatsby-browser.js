@@ -7,20 +7,17 @@ import "imagesloaded/imagesloaded";
 import "popper.js";
 import "bootstrap/dist/js/bootstrap";
 import mediumZoom from "medium-zoom";
+import "nicescroll";
 const $ = require( "jquery" );
-const autosize = require("autosize");
-const validator = require("validator");
-const objectFitImages = require("object-fit-images");
-const lazySizes = require("lazysizes");
 const ScrollMagic = require("scrollmagic");
 
 SwiperCore.use([Pagination]);
 
 
-export const onRouteUpdate = () => {
+export const wrapPageElement = () => {
     $(document).ready(function(){
 
-        var isMobile = false;
+        let isMobile = false;
         if( /Android|webOS|iPhone|iPod|iPad|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
             $('html').addClass('touch');
             isMobile = true;
@@ -128,13 +125,13 @@ export const onRouteUpdate = () => {
     Loading projects
    ------------------------------------------------------------ */
 
-        
+
         var tlp = anime.timeline({
             easing: "easeOutExpo",
             duration: 900,
             direction: "reverse",
         })
-        
+
         tlp.add({
             targets: ".project-content",
             translateX: -250,
@@ -248,9 +245,9 @@ export const onRouteUpdate = () => {
         //  stop sticky kit
         //  based on your window width
 
-        var screen = 1200;
+        let screen = 1200;
 
-        var windowHeight, windowWidth;
+        let windowHeight, windowWidth;
         windowWidth = $(window).width();
         if ((windowWidth < screen)) {
             detachStickyKit();
@@ -297,7 +294,7 @@ export const onRouteUpdate = () => {
 
         // Testimonials
         $('.js-carousel-review').each(function() {
-            var carousel = new Swiper('.js-carousel-review', {
+             new Swiper('.js-carousel-review', {
                 slidesPerView: 1,
                 spaceBetween: 30,
                 speed: 300,
@@ -324,7 +321,7 @@ export const onRouteUpdate = () => {
 
         // Clients
         $('.js-carousel-clients').each(function() {
-            var carousel = new Swiper('.js-carousel-clients', {
+             new Swiper('.js-carousel-clients', {
                 slidesPerView: 4,
                 spaceBetween: 30,
                 //loop: true,
@@ -399,51 +396,6 @@ export const onRouteUpdate = () => {
 
 
         /*-----------------------------------------------------------------
-     Scroll indicator
-   -------------------------------------------------------------------*/
-
-        function scrollIndicator() {
-            $(window).on('scroll', function() {
-                var wintop = $(window).scrollTop(), docheight =
-                    $(document).height(), winheight = $(window).height();
-                var scrolled = (wintop/(docheight-winheight))*100;
-                $('.scroll-line').css('width', (scrolled + '%'));
-            });
-        }
-
-        scrollIndicator(); //Init
-
-
-        /*-----------------------------------------------------------------
-          ScrollTo
-        -------------------------------------------------------------------*/
-
-        function scrollToTop() {
-            var $backToTop = $('.back-to-top'),
-                $showBackTotop = $(window).height();
-
-            $backToTop.hide();
-
-
-            $(window).scroll( function() {
-                var windowScrollTop = $(window).scrollTop();
-                if( windowScrollTop > $showBackTotop ) {
-                    $backToTop.fadeIn('slow');
-                } else {
-                    $backToTop.fadeOut('slow');
-                }
-            });
-
-            $backToTop.on('click', function (e) {
-                e.preventDefault();
-                $(' body, html ').animate( {scrollTop : 0}, 'slow' );
-            });
-        }
-
-        scrollToTop(); //Init
-
-
-        /*-----------------------------------------------------------------
        mediumZoom
      -------------------------------------------------------------------*/
 
@@ -451,8 +403,73 @@ export const onRouteUpdate = () => {
             margin: 30,
             background: "#000",
         });
-        
 
+        /*-----------------------------------------------------------------
+     niceScroll
+   -------------------------------------------------------------------*/
+
+        $('textarea').niceScroll({
+            horizrailenabled:false
+        });
+
+
+        /*-----------------------------------------------------------------
+     Contacts form
+   -------------------------------------------------------------------*/
+        
+        // $("#contact-form").validator().on("submit", function (event) {
+        //     if (event.isDefaultPrevented()) {
+        //         formError();
+        //         submitMSG(false, "Please fill in the form...");
+        //     } else {
+        //         event.preventDefault();
+        //         submitForm();
+        //     }
+        // });
+        //
+        // function submitForm(){
+        //     var name = $("#nameContact").val(),
+        //         email = $("#emailContact").val(),
+        //         message = $("#messageContact").val();
+        //
+        //     var url = "assets/php/form-contact.php";
+        //
+        //     $.ajax({
+        //         type: "POST",
+        //         url: url,
+        //         data: "name=" + name + "&email=" + email + "&message=" + message,
+        //         success : function(text){
+        //             if (text == "success"){
+        //                 formSuccess();
+        //             } else {
+        //                 formError();
+        //                 submitMSG(false,text);
+        //             }
+        //         }
+        //     });
+        // }
+        //
+        // function formSuccess(){
+        //     $("#contact-form")[0].reset();
+        //     submitMSG(true, "Thanks! Your message has been sent.");
+        // }
+        //
+        // function formError(){
+        //     $("#contactForm").removeClass().addClass('shake animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+        //         $(this).removeClass();
+        //     });
+        // }
+        //
+        // function submitMSG(valid, msg){
+        //     var msgClasses;
+        //     if(valid){
+        //         msgClasses = "validation-success"
+        //     } else {
+        //         msgClasses = "validation-danger";
+        //     }
+        //     $("#validator-contact").removeClass().addClass(msgClasses).text(msg);
+        // }
+        
     })
 
 }

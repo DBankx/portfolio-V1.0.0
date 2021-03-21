@@ -22,6 +22,7 @@ module.exports = {
       },
     },
     `gatsby-transformer-sharp`,
+    `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
@@ -41,6 +42,12 @@ module.exports = {
       options: {
         plugins: [
             "gatsby-remark-relative-images",
+          {
+            resolve: `gatsby-remark-vscode`,
+            options: {
+              theme: 'Default Dark+'
+            }
+          },
           {
             resolve: "gatsby-remark-images",
             options:{

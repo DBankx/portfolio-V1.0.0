@@ -1,7 +1,7 @@
 ﻿---
-title: "Hello world - Dami's first post"
-date: "Dec 11, 2020"
-tags: ["blogging", "javascript", "CSharp", "Web dev"]
+title: Hello world - Dami's first blog post
+date: Dec 11, 2020
+tags: [blogging, javascript, CSharp, Web dev]
 cover: ./helloworld.png
 excerpt: About me, my passion, my beliefs and who i am as a web developer trying to find himself in this crazy world. 
 ---

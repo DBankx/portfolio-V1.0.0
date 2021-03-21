@@ -5,11 +5,12 @@ import {Link} from "gatsby";
 import folder from "../images/icons/folder.svg";
 import github from "../images/icons/github.svg";
 import foreign from "../images/icons/foreign.svg";
+import externalLink from "../images/icons/foreign.svg";
 
 export default function AllProjects(){
     return (
         <Layout>
-            <SEO title="All Projects" />
+            <SEO title="All Projects" description="This is contains the majority of projects i have hosted on github for people to review and see" />
             <div className="pb-2">
                 <h1 className="title title--h1 first-title title__separate">All Projects</h1>
             </div>
@@ -21,8 +22,8 @@ export default function AllProjects(){
                         <div className="folder-top">
                             <img src={folder} alt="" className="folder"/>
                             <div>
-                                <a><img src={github} alt="" className="folder-top-link" /></a>
-                                <a><img src={foreign} alt="" className="folder-top-link" /></a>
+                                <a href="https://github.com/DBankx/DEVTREE" rel="noreferrer noopener" target="_blank"><img className="folder-top-link" src={github} alt="github" /></a>
+                                <a href="https://royal-eds-71788.herokuapp.com/" rel="noreferrer noopener" target="_blank"><img className="folder-top-link" src={externalLink} alt="link" /></a>
                             </div>
                         </div>
                         <h3 style={{marginTop: "0.6em"}} className="title title--h3 timeline__title">
@@ -46,8 +47,8 @@ export default function AllProjects(){
                         <div className="folder-top">
                             <img src={folder} alt="" className="folder"/>
                             <div>
-                                <a><img src={github} alt="" className="folder-top-link" /></a>
-                                <a><img src={foreign} alt="" className="folder-top-link" /></a>
+                                <a href="https://github.com/DBankx/Qlip" rel="noreferrer noopener" target="_blank"><img className="folder-top-link" src={github} alt="github" /></a>
+                                {/*<a><img src={foreign} alt="" className="folder-top-link" /></a>*/}
                             </div>
                         </div>
                         <h3 style={{marginTop: "0.6em"}} className="title title--h3 timeline__title">
@@ -71,8 +72,8 @@ export default function AllProjects(){
                             <div className="folder-top">
                                 <img src={folder} alt="" className="folder"/>
                                 <div>
-                                    <a><img src={github} alt="" className="folder-top-link" /></a>
-                                    <a><img src={foreign} alt="" className="folder-top-link" /></a>
+                                    <a href="https://github.com/DBankx/talenture-application" rel="noreferrer noopener" target="_blank"><img className="folder-top-link" src={github} alt="github" /></a>
+                                    <a href="https://talenture-job.herokuapp.com/" rel="noreferrer noopener" target="_blank"><img className="folder-top-link" src={externalLink} alt="link" /></a>
                                 </div>
                             </div>
                             <h3 style={{marginTop: "0.6em"}} className="title title--h3 timeline__title">
@@ -96,8 +97,33 @@ export default function AllProjects(){
                             <div className="folder-top">
                                 <img src={folder} alt="" className="folder"/>
                                 <div>
-                                    <a><img src={github} alt="" className="folder-top-link" /></a>
-                                    <a><img src={foreign} alt="" className="folder-top-link" /></a>
+                                    <a href="https://github.com/DBankx/heimdall-test" rel="noreferrer noopener" target="_blank"><img className="folder-top-link" src={github} alt="github" /></a>
+                                    <a href="https://heimdall-frontend.herokuapp.com/" rel="noreferrer noopener" target="_blank"><img className="folder-top-link" src={externalLink} alt="link" /></a>
+                                </div>
+                            </div>
+                            <h3 style={{marginTop: "0.6em"}} className="title title--h3 timeline__title">
+                               Heimdall Library 
+                            </h3>
+                            <p>A library book borrowing platform that utilizes typescript and nodejs. The application was built for the application to a job prospect.</p>
+                        </div>
+                        <footer className="folder-footer">
+                            <ul className="project-tech-list all-projects-tech">
+                                <li>NodeJs</li>
+                                <li>Mobx</li>
+                                <li>React</li>
+                                <li>Typescript</li>
+                            </ul>
+                        </footer>
+                    </div>
+                </div>
+                <div className="col-12 col-lg-4 col-md-4 col-sm-6" style={{marginBottom: "2em"}}>
+                    <div className="folder-block">
+                        <div className="folder-content">
+                            <div className="folder-top">
+                                <img src={folder} alt="" className="folder"/>
+                                <div>
+                                    <a href="https://github.com/DBankx/Yak-News" rel="noreferrer noopener" target="_blank"><img className="folder-top-link" src={github} alt="github" /></a>
+                                    <a href="https://tranquil-wave-91007.herokuapp.com/" rel="noreferrer noopener" target="_blank"><img className="folder-top-link" src={externalLink} alt="link" /></a>
                                 </div>
                             </div>
                             <h3 style={{marginTop: "0.6em"}} className="title title--h3 timeline__title">
@@ -122,8 +148,7 @@ export default function AllProjects(){
                             <div className="folder-top">
                                 <img src={folder} alt="" className="folder"/>
                                 <div>
-                                    <a><img src={github} alt="" className="folder-top-link" /></a>
-                                    <a><img src={foreign} alt="" className="folder-top-link" /></a>
+                                    <a href="https://github.com/DBankx/Rater" rel="noreferrer noopener" target="_blank"><img className="folder-top-link" src={github} alt="github" /></a>
                                 </div>
                             </div>
                             <h3 style={{marginTop: "0.6em"}} className="title title--h3 timeline__title">
@@ -148,8 +173,7 @@ export default function AllProjects(){
                             <div className="folder-top">
                                 <img src={folder} alt="" className="folder"/>
                                 <div>
-                                    <a><img src={github} alt="" className="folder-top-link" /></a>
-                                    <a><img src={foreign} alt="" className="folder-top-link" /></a>
+                                    <a href="https://github.com/DBankx/Reactivity" rel="noreferrer noopener" target="_blank"><img className="folder-top-link" src={github} alt="github" /></a>
                                 </div>
                             </div>
                             <h3 style={{marginTop: "0.6em"}} className="title title--h3 timeline__title">
@@ -174,8 +198,8 @@ export default function AllProjects(){
                             <div className="folder-top">
                                 <img src={folder} alt="" className="folder"/>
                                 <div>
-                                    <a><img src={github} alt="" className="folder-top-link" /></a>
-                                    <a><img src={foreign} alt="" className="folder-top-link" /></a>
+
+                                    <a href="https://github.com/DBankx/ChatterBox" rel="noreferrer noopener" target="_blank"><img className="folder-top-link" src={github} alt="github" /></a>
                                 </div>
                             </div>
                             <h3 style={{marginTop: "0.6em"}} className="title title--h3 timeline__title">
