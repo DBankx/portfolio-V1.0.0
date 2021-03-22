@@ -21,12 +21,14 @@ import sassSvg from "../images/icons/sass.svg";
 import wordpressSvg from "../images/icons/wordpress.svg";
 import nodeSvg from "../images/icons/nodeSvg.svg";
 import typescript from "../images/icons/typescript.svg";
+import damiOye from "../images/dami-oye.jpeg";
 
 export default function Index(){
     return (
         <Layout>
             <SEO title="About me" />
             <div className="pb-0">
+                
                 <div className="pb-0">
                     <h1 className="title title--h1 first-title title__separate">About Me</h1>
                     <p>Hello!, I'm a full-stack engineer from Lagos, Nigeria who is capable of delivering market ready enterprise web applications and sites. I enjoy turning complex problems into simple, beautiful and intuitive code. I am a quick and sharp learner that can adapt to any of your needs using the right development tools for your specific use case to present worthy and beautiful applications.</p>
@@ -93,8 +95,8 @@ export default function Index(){
                                         </g>
                                     </svg>
                                     <div>
-                                    <h4 className="title title--h5">Pureheart Gharoro</h4>
-                                       <p>Lead developer at Talenture Group</p> 
+                                    <h3 className="title title--h5" ><a className="review-link"  href="https://www.linkedin.com/in/gharoropureheart/" rel="noreferrer noopener" target="_blank" >Pureheart Gharoro</a></h3>
+                                       <p>Lead developer at Kimberly Ryan Limited</p> 
                                     </div>
                                     <p className="review-item__caption">Bringing dami into the company was a brilliant idea as he made the development processes easily understandable and flawless.</p>
                                 </div>
@@ -105,7 +107,7 @@ export default function Index(){
                                             <image xlinkHref={feranmiWork} height="100%" width="100%" />
                                         </g>
                                     </svg>
-                                    <h4 className="title title--h5">Feranmi Olayinka</h4>
+                                    <h3 className="title title--h5" ><a className="review-link"  href="https://www.linkedin.com/in/olayinka-oluwaferanmi-a29618174/" rel="noreferrer noopener">Feranmi Olayinka</a></h3>
                                     <p className="review-item__caption">Dami is one of the most talented programmers out there.  I always go back to him when I'm out of my depth and he's never failed to deliver what I ask for. Smart, trustworthy and professional. You won't be disappointed.</p>
                                 </div>
 
@@ -116,10 +118,23 @@ export default function Index(){
                                         </g>
                                     </svg>
                                     <div>
-                                    <h4 className="title title--h5">Kelechi Uma</h4>
+                                        <h3 className="title title--h5" ><a className="review-link"  href="https://www.linkedin.com/in/kelechi-uma-4355a39b/" rel="noreferrer noopener" target="_blank">Kelechi Uma</a></h3>
                                         <p>CEO of Execute Labs</p>
                                     </div>
                                     <p className="review-item__caption">Dami really helped us in designing and developing a responsive and functioning website, and was an overall joy to work with!. 10/10 </p>
+                                </div>
+                                
+                                <div className="swiper-slide review-item">
+                                    <svg className="avatar avatar--80" viewBox="0 0 84 84">
+                                        <g className="avatar__hexagon">
+                                            <image xlinkHref={damiOye} height="100%" width="100%" />
+                                        </g>
+                                    </svg>
+                                    <div>
+                                        <h3 className="title title--h5" > <a className="review-link" href="https://www.linkedin.com/in/damilola-oyeyipo45/" rel="noreferrer noopener" target="_blank">Damilola Oyeyipo</a></h3> 
+                                        <p>Backend engineer at Talenture Group</p>
+                                    </div>
+                                    <p className="review-item__caption">Dami is a ready learner who pushes himself beyond limits. I have no doubts about his technical abilities, I strongly recommend Damilola</p>
                                 </div>
                             </div>
 

@@ -3,7 +3,7 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 import educationIcon from "../images/icons/icon-education.svg";
 import experienceIcon from "../images/icons/icon-experience.svg";
-import marker from "../images/icons/maps-and-flags.svg";
+import marker from "../images/icons/icon-location.svg";
 import officeBuilding from "../images/icons/office-building.svg";
 
 export default function Resume(){

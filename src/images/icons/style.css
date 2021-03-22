@@ -25,6 +25,15 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-git{
+  width: 15px;
+  height: 15px;
+}
+
+.icon-git :hover{
+  color: #304CFD;
+}
+
 .icon-chevron-right:before {
   content: "\e90c";
 }

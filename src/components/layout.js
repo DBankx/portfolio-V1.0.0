@@ -19,12 +19,15 @@ const Layout = ({ children }) => {
           birthDay
           author
           linkedin
+          twitter
+          facebook
+          github
         }
       }
     }
   `)
 
-    const {location, birthDay, emailAddress, position, phone, author, linkedin} = data.site.siteMetadata
+    const {location, facebook, birthDay, emailAddress, position, phone, author, linkedin, twitter, github} = data.site.siteMetadata
     
     
     
@@ -32,7 +35,7 @@ const Layout = ({ children }) => {
       <main className="main">
         <div className="container gutter-top">
           <div className="row sticky-parent">
-              <SideBar author={author} email={emailAddress} position={position} phone={phone} birthDay={birthDay} location={location} linkedin={linkedin} />
+              <SideBar facebook={facebook} author={author} email={emailAddress} position={position} phone={phone} birthDay={birthDay} location={location} linkedin={linkedin} twitter={twitter} github={github} />
               <div className="col-12 col-md-12 col-xl-9">
                   <div className="box shadow pb-0">
                      <Menu />

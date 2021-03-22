@@ -14,7 +14,7 @@ function SEO({ description, lang, meta, title, keywords, image, url }) {
   const { site, file } = useStaticQuery(
     graphql`
       query {
-      file(name: {eq: "me-main"}) {
+      file(name: {eq: "Image-blue"}) {
     id
     childImageSharp {
       fixed(width: 600) {

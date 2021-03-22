@@ -9,12 +9,17 @@ export default function Contact() {
     const MAPBOX_TOKEN = 'pk.eyJ1IjoiZGJhbmt4IiwiYSI6ImNrandpNnRpcTBpc24ycGxja3hjaHdudnAifQ.IsBBI65qv2qJKZPd0kIyYw';
 
     const [showPopup, togglePopup] = React.useState(false);
+
+
+    const [successMessage, setSuccessMessage] = useState("");
+    const [failureMessage, setFailureMessage] = useState("");
     
     const [viewport, setViewport] = useState({
         latitude: 6.4646,
         longitude: 3.5725,
         zoom: 14
     });
+    
 
     const handleViewportChange = useCallback(
         (newViewport) => setViewport(newViewport),
@@ -79,7 +84,25 @@ export default function Contact() {
             
             <h2 className="title title--h3">Contact Form</h2>
 
-                <Formik validationSchema={validationSchema} initialValues={{name: "", email:"", message: ""}} onSubmit={values => console.log(values)}>
+                <Formik validationSchema={validationSchema} initialValues={{name: "", email:"", message: ""}} onSubmit={(values, action) => {
+                    const formData = new FormData();
+                    formData.append("name", values.name);
+                    formData.append("email", values.email);
+                    formData.append("message", values.message);
+                    
+                    // send to getform.io
+                    fetch("https://getform.io/f/aa96ef04-8a99-4b00-85ca-cb0d0ee4105c", {
+                        method: "POST",
+                        body: formData
+                    }).then(() => {
+                        setFailureMessage("");
+                        setSuccessMessage("Thank you for message, i'll get back to you soon! 🎉")
+                        action.resetForm();
+                    }).catch(() => {
+                        setSuccessMessage("");
+                        setFailureMessage("There was an error submitting your form, Please try again! 💢");
+                    }).finally(() => action.setSubmitting(false));
+                }}>
                     {({
                         handleSubmit,
                         values,
@@ -110,7 +133,10 @@ export default function Contact() {
                 </div>
                 <div className="row">
                     <div className="col-12 col-md-6 order-2 order-md-1 text-center text-md-left">
-                        <div id="validator-contact" className="hidden" />
+                        <div id="validator-contact" className={`hidden ${failureMessage.length > 0 ? "validation-danger" : "validation-success"}`}>
+                            {successMessage}
+                            {failureMessage}
+                        </div>
                     </div>
                     <div className="col-12 col-md-6 order-1 order-md-2 text-right">
                         <button disabled={!isValid || isSubmitting || !dirty} type="submit" className="btn">{isSubmitting ? <div><div className="spinner-border spinner-border-sm text-light" role="status" /> Sending message...</div> : <div><i className="font-icon icon-send" /> Send Message</div>}</button>

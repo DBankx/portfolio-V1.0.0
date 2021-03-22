@@ -1,39 +1,7 @@
 /* ------------------------------------------------
- Author: ArtStyles (Art)
- 
- Template Name: vCard
- version: 1.1.0
------------------------------------------------- */
-/* ------------------------------------------------
 
- - General Styles
- - Background
- - Typography
- - Preloader
- - Form
- - Button
- - Preloader
- - Sidebar
- - Sections
- - Navbar
- - Footer
- - Cases
- - Clients
- - Contact
- - Single post
- - Footer
- - Contact
- - Portfolio
- - News
- - Single news
- - Testimonials
- - Timeline
- - Other
- 
 ------------------------------------------------ */
 @import url(vendors/bootstrap.min.css);
-@import url(vendors/swiper.min.css);
-@import url(vendors/simplebar.min.css);
 @import url(../../images/icons/style.css);
 @import url("https://fonts.googleapis.com/css?family=Archivo:400,400i,500,500i,600,600i,700,700i&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Merriweather:400,900&display=swap");
@@ -57,7 +25,7 @@ html {
 
 body, html {
   font-size: 1rem;
-  -webkit-text-size-adjust: 100%;
+  /*-webkit-text-size-adjust: 100%;*/
 }
 
 body {
@@ -101,6 +69,13 @@ html.is-scroll-disabled body {
   position: absolute;
   height: 0;
   width: 0;
+}
+
+.bg-cocktail{
+  background-color: #7f53ac;
+  background-image: linear-gradient(315deg, #7f53ac 0%, #647dee 74%);
+  
+  background-attachment: fixed;
 }
 
 .bg-triangles {
@@ -3020,6 +2995,25 @@ button:focus {
 > [class*="col-"] {
   padding-right: 1em;
   padding-left: 1em;
+}
+
+.validation-success{
+  color: #1e7e34;
+}
+
+.validation-danger{
+  color: #bd2130;
+}
+
+.review-link{
+  color: inherit;
+  text-decoration: none !important;
+}
+
+.review-link :hover{
+  color: #304CFD;
+  transition: .2s ease-in;
+  text-decoration: none !important;
 }
 
 /*# sourceMappingURL=style.css.map */

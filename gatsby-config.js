@@ -3,14 +3,16 @@ module.exports = {
     title: `Hunndy`,
     description: `A full-stack engineer capable of delivering market ready enterprise applications.`,
     author: `Hundeyin Oluwadamilola`,
-    twitterUsername: "@DBankx1",
     birthDay: "March 29, 1999",
     location: "Lagos, Nigeria",
     emailAddress: "damihundeyin@gmail.com",
     phone: "+234 (0) 817-270-2507",
     position: "Full-stack engineer",
     url: "https://hunndy.com",
-    linkedin: "https://www.linkedin.com/in/hundy/"
+    linkedin: "https://www.linkedin.com/in/hundy/",
+    twitter: "https://twitter.com/damicodes",
+    facebook: "https://www.facebook.com/damilola.hundeyin/",
+    github: "https://www.github.com/dbankx"
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -33,7 +35,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/H.pngs`, // This path is relative to the root of the site.
         legacy: true
       },
     },

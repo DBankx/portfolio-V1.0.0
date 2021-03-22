@@ -2,12 +2,12 @@ import anime from 'animejs/lib/anime.es'
 import "sticky-kit/dist/sticky-kit";
 import Swiper from 'swiper';
 import SwiperCore, {Pagination} from "swiper";
-import 'swiper/swiper-bundle.css';
 import "imagesloaded/imagesloaded";
 import "popper.js";
 import "bootstrap/dist/js/bootstrap";
 import mediumZoom from "medium-zoom";
 import "nicescroll";
+import 'swiper/swiper-bundle.css';
 const $ = require( "jquery" );
 const ScrollMagic = require("scrollmagic");
 

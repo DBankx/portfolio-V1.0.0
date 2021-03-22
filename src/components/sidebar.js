@@ -1,8 +1,9 @@
 ﻿import React from "react";
 import profileImage from "../images/Image-blue.jpg";
 import {Link} from "gatsby";
+import githublogo from "../images/icons/github-big-logo.svg"; 
 
-export default function SideBar({author, position, birthDay, email, phone, location, linkedin}){
+export default function SideBar({author, position, birthDay, email, phone, location, linkedin, twitter, facebook, github}){
     return (
         <aside className="col-12 col-md-12 col-xl-3">
             <div className="sidebar box shadow pb-0 sticky-column">
@@ -17,9 +18,10 @@ export default function SideBar({author, position, birthDay, email, phone, locat
                     
                     
                     <div className="social">
-                        <a className="social__link" href="https://www.facebook.com/"><i className="font-icon icon-facebook" /></a>
-                        <a className="social__link" href="https://www.behance.com/"><i className="font-icon icon-twitter" /></a>
-                        <a className="social__link" href={linkedin}><i className="font-icon icon-linkedin2" /></a>
+                        <a className="social__link" href={facebook} rel="noreferrer noopener" target="_blank"><i className="font-icon icon-facebook" /></a>
+                        <a className="social__link" href={twitter} rel="noreferrer noopener" target="_blank"><i className="font-icon icon-twitter" /></a>
+                        <a className="social__link" href={linkedin} rel="noreferrer noopener" target="_blank"><i className="font-icon icon-linkedin2" /></a>
+                        <a className="social__link" href={github} rel="noreferrer noopener" target="_blank"><img src={githublogo} alt="github" className="font-icon icon-git" /></a>
                     </div>
                 </div>
 
