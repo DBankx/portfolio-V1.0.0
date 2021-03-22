@@ -149,7 +149,7 @@ export default function Index(){
                         <div className="swiper-container js-carousel-clients">
                             <div className="swiper-wrapper">
                                 <div className="swiper-slide" >
-                                    <a href="#"><img data-toggle="tooltip" data-placement="bottom" title="CSharp" style={{width: "70px"}} src={Csharp} alt="Logo" /></a>
+                                    <a href="https://docs.microsoft.com/en-us/dotnet/csharp/"><img data-toggle="tooltip" data-placement="bottom" title="CSharp" style={{width: "70px"}} src={Csharp} alt="Logo" /></a>
                                 </div>
 
                                 <div className="swiper-slide">
@@ -186,11 +186,11 @@ export default function Index(){
                                 </div>
 
                                 <div className="swiper-slide">
-                                    <a href="#"><img data-toggle="tooltip" data-placement="bottom" title="Html" src={htmlSvg} style={{width: "70px"}} alt="Logo" /></a>
+                                    <a href="https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics"><img data-toggle="tooltip" data-placement="bottom" title="Html" src={htmlSvg} style={{width: "70px"}} alt="Logo" /></a>
                                 </div>
 
                                 <div className="swiper-slide">
-                                    <a href="#"><img src={cssSvg} style={{width: "50px"}} alt="Logo" data-toggle="tooltip" data-placement="bottom" title="Css" /></a>
+                                    <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps"><img src={cssSvg} style={{width: "50px"}} alt="Logo" data-toggle="tooltip" data-placement="bottom" title="Css" /></a>
                                 </div>
 
                                 <div className="swiper-slide">

@@ -1437,7 +1437,7 @@ button:focus {
     height: 100vh;
     padding-right: 0;
     position: fixed;
-    pointer-events: none;
+    /*pointer-events: none;*/
     z-index: 1100;
   }
 }

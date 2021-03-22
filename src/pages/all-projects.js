@@ -4,7 +4,6 @@ import SEO from "../components/seo";
 import {Link} from "gatsby";
 import folder from "../images/icons/folder.svg";
 import github from "../images/icons/github.svg";
-import foreign from "../images/icons/foreign.svg";
 import externalLink from "../images/icons/foreign.svg";
 
 export default function AllProjects(){

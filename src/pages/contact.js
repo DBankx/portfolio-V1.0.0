@@ -76,7 +76,7 @@ export default function Contact() {
                         <div>I stay in lagos nigeria, please feel free to contactme about anything</div>
                     </Popup>}
                     <Marker latitude={6.4646} longitude={3.5725} offsetLeft={-20} offsetTop={-10}>
-                        <div onClick={() => togglePopup(!showPopup)} id="marker" />
+                        <div role="marker" onClick={() => togglePopup(!showPopup)} id="marker" />
                     </Marker>
                 </ReactMapGL>
                 </div>

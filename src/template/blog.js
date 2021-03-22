@@ -46,7 +46,7 @@ export default function Blog(props){
                         <p>{frontmatter.excerpt}</p>
                     </div>
                     <div className="header-post__image-wrap">
-                        <GatsbyImage  image={blogImage} className="cover" data-zoom  alt={`${frontmatter.title}-blog`}  data-zoom />
+                        <GatsbyImage  image={blogImage} className="cover" alt={`${frontmatter.title}-blog`}  data-zoom />
                     </div>
                 </header>
                 <article className="caption-post" dangerouslySetInnerHTML={{ __html: html }} /> 
