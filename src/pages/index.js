@@ -22,6 +22,7 @@ import wordpressSvg from "../images/icons/wordpress.svg";
 import nodeSvg from "../images/icons/nodeSvg.svg";
 import typescript from "../images/icons/typescript.svg";
 import damiOye from "../images/dami-oye.jpeg";
+import "swiper/swiper-bundle.min.css";
 
 export default function Index(){
     return (
