@@ -1,5 +1,4 @@
 import anime from 'animejs/lib/anime.es'
-import "sticky-kit/dist/sticky-kit";
 import Swiper from 'swiper';
 import SwiperCore, {Pagination} from "swiper";
 import "popper.js";
@@ -15,7 +14,6 @@ SwiperCore.use([Pagination]);
 
 export const wrapPageElement = () => {
     $(document).ready(function(){
-        console.log("hi i can see your dom functions");
         let isMobile = false;
         if( /Android|webOS|iPhone|iPod|iPad|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
             $('html').addClass('touch');
@@ -212,75 +210,7 @@ export const wrapPageElement = () => {
         });
 
 
-        /*-----------------------------------------------------------------
-            Sticky sidebar
-        -------------------------------------------------------------------*/
-
-        function activeStickyKit() {
-            $('.sticky-column').stick_in_parent({
-                parent: '.sticky-parent'
-            });
-
-            // bootstrap col position
-            $('.sticky-column')
-                .on('sticky_kit:bottom', function(e) {
-                    $(this).parent().css('position', 'static');
-                })
-                .on('sticky_kit:unbottom', function(e) {
-                    $(this).parent().css('position', 'relative');
-                });
-        };
-        activeStickyKit();
-
-        function detachStickyKit() {
-            $('.sticky-column').trigger("sticky_kit:detach");
-        };
-
-        //  stop sticky kit
-        //  based on your window width
-
-        let screen = 1200;
-
-        let windowHeight, windowWidth;
-        windowWidth = $(window).width();
-        if ((windowWidth < screen)) {
-            detachStickyKit();
-        } else {
-            activeStickyKit();
-        }
-
-        // windowSize
-        // window resize
-        function windowSize() {
-            windowHeight = window.innerHeight ? window.innerHeight : $(window).height();
-            windowWidth = window.innerWidth ? window.innerWidth : $(window).width();
-        }
-        windowSize();
-
-        function debounce(func, wait, immediate) {
-            var timeout;
-            return function() {
-                var context = this, args = arguments;
-                var later = function() {
-                    timeout = null;
-                    if (!immediate) func.apply(context, args);
-                };
-                var callNow = immediate && !timeout;
-                clearTimeout(timeout);
-                timeout = setTimeout(later, wait);
-                if (callNow) func.apply(context, args);
-            };
-        };
-
-        $(window).resize(debounce(function(){
-            windowSize();
-            $(document.body).trigger("sticky_kit:recalc");
-            if (windowWidth < screen) {
-                detachStickyKit();
-            } else {
-                activeStickyKit();
-            }
-        }, 250));
+        
 
         /*-----------------------------------------------------------------
      Carousel
