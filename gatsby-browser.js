@@ -2,7 +2,6 @@ import anime from 'animejs/lib/anime.es'
 import "sticky-kit/dist/sticky-kit";
 import Swiper from 'swiper';
 import SwiperCore, {Pagination} from "swiper";
-import "imagesloaded/imagesloaded";
 import "popper.js";
 import "bootstrap/dist/js/bootstrap";
 import mediumZoom from "medium-zoom";
@@ -16,7 +15,7 @@ SwiperCore.use([Pagination]);
 
 export const wrapPageElement = () => {
     $(document).ready(function(){
-
+        console.log("hi i can see your dom functions");
         let isMobile = false;
         if( /Android|webOS|iPhone|iPod|iPad|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
             $('html').addClass('touch');
@@ -86,10 +85,6 @@ export const wrapPageElement = () => {
             }
         });
 
-        $('body, .js-img-load').imagesLoaded({ background: !0 }).always( function( instance ) {
-            preloader(); //Init preloader
-        });
-
         function preloader() {
             var tl = anime.timeline({});
             tl
@@ -101,7 +96,6 @@ export const wrapPageElement = () => {
                 .add({
                     targets: '.circle-pulse',
                     duration: 300,
-                    //delay: 500,
                     opacity: 1,
                     zIndex: '-1',
                     easing: 'easeInOutQuart'
